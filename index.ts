@@ -44,7 +44,7 @@ const parseRGBA = (
 ): { r: number; g: number; b: number; a: number } => {
   const rgb = color.match(
     /rgb(a?)\((?<r>\d+), (?<g>\d+), (?<b>\d+)(, (?<a>\d(.\d+)?))?\)/,
-  )!.groups as any as { r: string; g: string; b: string; a?: string };
+  )?.groups as any as { r: string; g: string; b: string; a?: string };
 
   return {
     r: Number(rgb.r) / 255,

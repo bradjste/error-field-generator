@@ -4,67 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quad-shader: Render fragment shader in a quad</title>
+    <title>Error field generator</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <h1>Easy 2D shader setup with quad-shader</h1>
-    <p>
-      This is a template for getting started with
-      <a
-        href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API"
-        target="_blank"
-        rel="noopener noreferrer"
-        >WebGL</a
-      >. The code is on GitHub at
-      <a
-        href="https://github.com/nmattia/quad-shader"
-        target="_blank"
-        rel="noopener noreferrer"
-        >nmattia/quad-shader</a
-      >.
-    </p>
+ 
     <div id="canvas-container">
       <canvas id="glcanvas"></canvas>
     </div>
 
-    <p>
-      The animation above is generated on the fly via a WebGL fragment shader.
-      With fragment shaders, you have control over each pixel's color, making it
-      perfect for Creative Coding and generating textures and patterns
-      procedurally.
-    </p>
-
-    <p>
-      WebGL runs on the GPU, allowing for smooth, high-frame-rate animations.
-      One frame of the animation above is rendered in 30us (2021 laptop),
-      equivalent to over <strong>30 thousand</strong> frames per second.
-    </p>
-
-    <p>
-      This template has <strong>no dependencies</strong> and uses the WebGL API
-      directly. See more in the GitHub
-      <a
-        href="https://github.com/nmattia/quad-shader"
-        target="_blank"
-        rel="noopener noreferrer"
-        >repository</a
-      >.
-    </p>
-
-    <footer>
-      &copy;
-      <a href="https://nmattia.com" target="_blank" rel="noopener noreferrer"
-        >Nicolas Mattia</a
-      >
-      2025
-    </footer>
     <script type="module">
       import { main } from "./index.ts";
       main();
