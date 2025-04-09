@@ -12,4 +12,5 @@ export default defineConfig({
       formats: ["es", "cjs"] /* target modern browsers & node */,
     },
   },
+  base: 'error-field-generator'
 });
