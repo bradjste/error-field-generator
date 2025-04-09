@@ -40,7 +40,7 @@ float evaluate(float x, float y) {
 }
 
 float getErrorFromPosition() {
-    float scale = 3.10 ; // 1.0 + 20.0 * cos(sin(uTime) * sin(uTime) * uTime)
+    float scale = 13.10 ; // 1.0 + 20.0 * cos(sin(uTime) * sin(uTime) * uTime)
     float offSetX =  0.0;
     float offSetY =  uTime * 0.7;
     float x = offSetX + vPosition.x * scale;
