@@ -1,0 +1,117 @@
+:root {
+  /* The 3 colors used on the page */
+  --col-primary: rgb(57, 62, 65);
+  --col-pop: rgb(233, 79, 55);
+  --col-background: rgb(246, 247, 235);
+
+  color: var(--col-primary);
+  font-family: "Hind", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  --pad: 1em;
+  --pad-big: 1.7em;
+}
+
+/* Basic dark mode, with primary & background swapped */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --col-pop: rgb(233, 79, 55);
+    --col-background: rgb(57, 62, 65);
+    --col-primary: rgb(246, 247, 235);
+  }
+}
+
+h1 {
+  font-size: 2.1em;
+
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+
+  padding-top: var(--pad);
+  padding-bottom: var(--pad);
+}
+
+p {
+  padding-bottom: var(--pad);
+}
+
+body {
+  background-color: var(--col-background);
+  margin: 0 auto;
+}
+
+/* In general, the width is at most 480px.
+ * On mobile (< 480px) we limit the content to 450px
+ * and set 15px of padding on either side.
+ *
+ * On bigger screens, no padding, but we limit the content to
+ * 450px (as well) and scale up the canvas to 480px.
+ * */
+@media (width < 480px) {
+  body {
+    max-width: 450px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  canvas {
+    width: 100%;
+  }
+}
+
+@media (width > 480px) {
+  body {
+    max-width: 450px;
+  }
+
+  canvas {
+    width: 480px;
+    /* 15px = (480 - 450) / 2 */
+    transform: translateX(-15px);
+  }
+}
+
+#canvas-container {
+  padding: var(--pad-big) 0;
+}
+
+canvas {
+  --transition-duration: 0.6s;
+  aspect-ratio: 1;
+  accent-color: var(--col-pop);
+  color: var(--col-primary);
+  transition:
+    color var(--transition-duration) cubic-bezier(0.3, 0.7, 0, 1),
+    accent-color var(--transition-duration) cubic-bezier(0.3, 0.7, 0, 1);
+}
+
+footer {
+  text-align: center;
+  padding-top: var(--pad-big);
+  padding-bottom: var(--pad-big);
+  color: #6f7a80;
+  font-size: 0.8em;
+}
+
+a:link,
+a:visited {
+  text-decoration: underline;
+  color: #6f7a80;
+}
+
+a:hover {
+  color: #393e41;
+}
+
+footer a:link,
+footer a:visited {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
