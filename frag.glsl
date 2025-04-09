@@ -34,15 +34,15 @@ float atan2_approx(float y, float x) {
 }
 
 float evaluate(float x, float y) {
-    return x * x * sin(y * y / (x + y));
-    return y * sin(pow(x + 2.6, y) * atan(x + 3.0 * y)) * x * (x * y)/uTime; // circle
-    // return cos( 0.01 * uTime + sin(x * y) * y * atan(0.001 * uTime * (y + x/ y))) * sin(0.1 * uTime * x * y) * y;
+    return x * cos(tan(y) / 10.0 *  sin( x * y * y + 1000.0 / (x + 1.0 * y))) + x * y;
+    // return y * sin(pow(x + 2.6, y) * atan(x + 3.0 * y)) * x * (x * y)/uTime; // circle
+    return tan( 10.1 * uTime + sin(x * y * x) / y * atan(0.001 * uTime * (y + x/ y))) * sin(0.1 * uTime * x * y) * y;
 }
 
 float getErrorFromPosition() {
-    float scale = 13.10 ; // 1.0 + 20.0 * cos(sin(uTime) * sin(uTime) * uTime)
-    float offSetX =  0.0;
-    float offSetY =  uTime * 0.7;
+    float scale = 0.00210 * uTime;  // * (uTime * 2.8); // 1.0 + 20.0 * cos(sin(uTime) * sin(uTime) * uTime)
+    float offSetX =  0.09 * uTime;
+    float offSetY =  1.57;
     float x = offSetX + vPosition.x * scale;
     float y = offSetY + vPosition.y * scale;
 
@@ -159,7 +159,7 @@ vec4 getColor2() {
     vec3 color = hsv2rgb(vec3(
         fract(value + uTime * 0.1), 
         1.0,
-        1.0 
+        1.0
         // (uTime - r) / (r * r * r / sin(vPosition.x * atan(vPosition.y / vP) * 2.0 * M_PI)) // 1.0 - r^10
     ));
 
